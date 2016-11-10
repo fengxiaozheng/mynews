@@ -3,13 +3,13 @@ package com.example.fengxiaozheng.mynews.ui.fragment.base;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.fengxiaozheng.mynews.presenter.base.Presenter;
+import com.example.fengxiaozheng.mynews.presenter.base.BasePresenter;
 
 /**
  * Created by fengxiaozheng on 2016/11/4.
  */
 
-public abstract class MvpFragment<P extends Presenter> extends BaseFragment {
+public abstract class MvpFragment<P> extends BaseFragment {
     protected P presenter;
 
     protected abstract P createPresenter();
@@ -23,8 +23,9 @@ public abstract class MvpFragment<P extends Presenter> extends BaseFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (presenter != null){
-            presenter.detachView();
+        if (presenter != null) {
+            BasePresenter p = new BasePresenter();
+            p.detachView();
         }
     }
 }

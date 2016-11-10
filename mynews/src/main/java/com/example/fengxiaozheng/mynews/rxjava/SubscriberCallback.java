@@ -10,7 +10,7 @@ import rx.Subscriber;
 public class SubscriberCallback<T> extends Subscriber<T> {
     private ApiCallback<T> apiCallback;
 
-    public SubscriberCallback(ApiCallback<T> apiCallback){
+    public SubscriberCallback(ApiCallback<T> apiCallback) {
         this.apiCallback = apiCallback;
     }
 
@@ -22,12 +22,12 @@ public class SubscriberCallback<T> extends Subscriber<T> {
     @Override
     public void onError(Throwable e) {
         e.printStackTrace();
-        if (e instanceof HttpException){
+        if (e instanceof HttpException) {
             HttpException exception = (HttpException) e;
             int code = exception.code();
             String msg = exception.getMessage();
             apiCallback.onFailure(code, msg);
-        }else {
+        } else {
             apiCallback.onFailure(e.hashCode(), e.getMessage());
         }
         apiCallback.onCompleted();

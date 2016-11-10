@@ -1,8 +1,8 @@
 package com.example.fengxiaozheng.mynews.ui.fragment.base;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.View;
 
 import butterknife.ButterKnife;
@@ -30,14 +30,14 @@ public class BaseFragment extends Fragment {
         onUnsubscribe();
     }
 
-    public void onUnsubscribe(){
+    public void onUnsubscribe() {
         //取消注册，避免内存泄露
-        if (compositeSubscription != null){
+        if (compositeSubscription != null) {
             compositeSubscription.unsubscribe();
         }
     }
 
-    public void addSubscription(Subscription subscription){
+    public void addSubscription(Subscription subscription) {
         compositeSubscription = new CompositeSubscription();
         compositeSubscription.add(subscription);
     }

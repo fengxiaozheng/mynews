@@ -1,8 +1,5 @@
 package com.example.fengxiaozheng.mynews.presenter.base;
 
-import com.example.fengxiaozheng.mynews.retrofit.ApiStore;
-import com.example.fengxiaozheng.mynews.retrofit.AppClient;
-
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
@@ -16,7 +13,6 @@ import rx.subscriptions.CompositeSubscription;
 
 public class BasePresenter<V> implements Presenter<V> {
     public V view;
-    public ApiStore apiStore = AppClient.getRetrofit().create(ApiStore.class);
     private CompositeSubscription mCompositeSubscription;
 
     @Override
@@ -43,7 +39,7 @@ public class BasePresenter<V> implements Presenter<V> {
             mCompositeSubscription = new CompositeSubscription();
         }
         mCompositeSubscription.add((Subscription) observable.subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(subscriber));
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber));
     }
 }

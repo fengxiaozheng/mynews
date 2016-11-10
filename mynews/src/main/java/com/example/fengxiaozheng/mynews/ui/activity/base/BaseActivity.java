@@ -14,10 +14,9 @@ import rx.subscriptions.CompositeSubscription;
  * Created by fengxiaozheng on 2016/11/4.
  */
 
-public class BaseActivity extends AppCompatActivity{
+public class BaseActivity extends AppCompatActivity {
     private CompositeSubscription subscription;
     protected Toolbar toolbar;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,20 +29,21 @@ public class BaseActivity extends AppCompatActivity{
         onUnSubscriber();
     }
 
-    public void initBar(){
+    public void initBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void onUnSubscriber() {
-        if (subscription != null && subscription.hasSubscriptions()){
+        if (subscription != null && subscription.hasSubscriptions()) {
             subscription.unsubscribe();
         }
     }
 
-    public void addSubscription(Subscription subscriptione){
+    public void addSubscription(Subscription subscriptione) {
         subscription = new CompositeSubscription();
         subscription.add(subscriptione);
     }
+
 }

@@ -9,7 +9,7 @@ import com.example.fengxiaozheng.mynews.presenter.base.BasePresenter;
  * Created by fengxiaozheng on 2016/11/4.
  */
 
-public abstract class MvpActivity<P extends BasePresenter> extends BaseActivity{
+public abstract class MvpActivity<P> extends BaseActivity {
     protected P presenter;
 
     protected abstract P createPresenter();
@@ -23,8 +23,9 @@ public abstract class MvpActivity<P extends BasePresenter> extends BaseActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (presenter != null){
-            presenter.detachView();
+        if (presenter != null) {
+            BasePresenter p = new BasePresenter();
+            p.detachView();
         }
     }
 }

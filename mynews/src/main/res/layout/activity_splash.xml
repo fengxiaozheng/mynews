@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#467212"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <com.example.fengxiaozheng.mynews.widget.splash.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+    <com.example.fengxiaozheng.mynews.widget.splash.NotouchLayout
+        android:layout_width="220dp"
+        android:layout_height="390dp"
+        android:layout_gravity="center|top"
+        android:background="@mipmap/phone_frame"
+        android:layout_marginTop="50dp"
+        >
+        <com.example.fengxiaozheng.mynews.widget.splash.ViewPager
+            android:id="@+id/main_scrolllayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:focusable="false"
+            android:layout_centerInParent="true"
+            />
+    </com.example.fengxiaozheng.mynews.widget.splash.NotouchLayout>
+
+
+</FrameLayout>
