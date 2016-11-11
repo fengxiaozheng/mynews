@@ -1,6 +1,7 @@
 package com.example.fengxiaozheng.mynews.ui.activity;
 
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -29,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        setupBlurView();
+        if (Build.VERSION.SDK_INT >= 17) {
+            setupBlurView();
+        }
         setNavigationView();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.contentFragment, new HomeFragment())

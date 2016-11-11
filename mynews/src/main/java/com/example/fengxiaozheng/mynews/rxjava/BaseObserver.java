@@ -19,6 +19,7 @@ public abstract class BaseObserver<T extends BaseResult> implements Observer<T> 
     protected void onFailed(String msg) {
         if (!TextUtils.isEmpty(msg)){}
          //   App.showToast(msg);
+        Log.i("fail =====", msg);
     }
 
     @Override

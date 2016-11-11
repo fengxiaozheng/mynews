@@ -23,6 +23,7 @@
     <string name="facebook">facebook</string>
     <string name="twitter">twitter</string>
     <string name="share">分享</string>
+    <string name="fengxiaozheng">风小筝</string>
 
 
     <integer name="app_version_code">2</integer>

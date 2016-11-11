@@ -5,9 +5,9 @@
     android:orientation="vertical"
     tools:context="com.example.fengxiaozheng.mynews.ui.fragment.HomeListFragment">
 
-    <android.support.v7.widget.RecyclerView
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/fragment_home_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"></com.jcodecraeer.xrecyclerview.XRecyclerView>
 
 </LinearLayout>

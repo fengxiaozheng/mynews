@@ -47,8 +47,10 @@ public class HomeFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.fragment_home_fun)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.fragment_home_see)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.fragment_home_star)));
-        tabLayout.setupWithViewPager(viewPager);
+    //    tabLayout.setupWithViewPager(viewPager);
     //    viewPager.setOffscreenPageLimit(4);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
     }
 
     private void setupViewPager(ViewPager viewPager) {

@@ -6,4 +6,9 @@
         <attr name="civ_border_overlay" format="boolean" />
         <attr name="civ_fill_color" format="color" />
     </declare-styleable>
+
+
+    <declare-styleable name="DragScaleImageView">
+        <attr name="scale_image" format="reference|color" />
+    </declare-styleable>
 </resources>
